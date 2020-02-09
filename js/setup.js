@@ -1,6 +1,6 @@
 'use strict';
 
-var namesWizards = [
+var NAMES_WIZARDS = [
   'Иван',
   'Хуан Себастьян',
   'Мария',
@@ -10,7 +10,7 @@ var namesWizards = [
   'Люпита',
   'Вашингтон'
 ];
-var surnamesWizards = [
+var SURNAMES_WIZARDS = [
   'да Марья',
   'Верон',
   'Мирабелла',
@@ -20,7 +20,7 @@ var surnamesWizards = [
   'Нионго',
   'Ирвинг'
 ];
-var coatColorWizards = [
+var COAT_COLORS = [
   'rgb(101, 137, 164)',
   'rgb(241, 43, 107)',
   'rgb(146, 100, 161)',
@@ -28,15 +28,16 @@ var coatColorWizards = [
   'rgb(215, 210, 55)',
   'rgb(0, 0, 0)'
 ];
-var eyesColorWizards = [
+var EYES_COLORS = [
   'black',
   'red',
   'blue',
   'yellow',
   'green'
 ];
+
+var AMOUNT_WIZARDS = 4;
 var wizards = [];
-var amountWizards = 4;
 
 var setupWizard = document.querySelector('.setup');
 setupWizard.classList.remove('hidden');
@@ -45,15 +46,18 @@ var similarListElement = document.querySelector('.setup-similar-list');
 var templateWizards = document.querySelector('#similar-wizard-template').content;
 templateWizards.querySelector('.setup-similar-item');
 
+/*
+Функция рандомного выбора
+*/
 var getRandomElement = function (arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
-for (var i = 0; i < amountWizards; i++) {
+for (var i = 0; i < AMOUNT_WIZARDS; i++) {
   wizards.push({
-    name: getRandomElement(namesWizards) + ' ' + getRandomElement(surnamesWizards),
-    coatColor: getRandomElement(coatColorWizards),
-    eyesColor: getRandomElement(eyesColorWizards)
+    name: getRandomElement(NAMES_WIZARDS) + ' ' + getRandomElement(SURNAMES_WIZARDS),
+    coatColor: getRandomElement(COAT_COLORS),
+    eyesColor: getRandomElement(EYES_COLORS)
   });
 }
 
