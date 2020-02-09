@@ -46,9 +46,8 @@ var similarListElement = document.querySelector('.setup-similar-list');
 var templateWizards = document.querySelector('#similar-wizard-template').content;
 templateWizards.querySelector('.setup-similar-item');
 
-/*
-Функция рандомного выбора
-*/
+
+// Функция рандомного выбора
 var getRandomElement = function (arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 };
