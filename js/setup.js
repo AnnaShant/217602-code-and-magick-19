@@ -45,7 +45,7 @@ let similarListElement = document.querySelector('.setup-similar-list');
 let templateWizards = document.querySelector('#similar-wizard-template').content;
 templateWizards.querySelector('.setup-similar-item');
 
-var getRandomElement = function (arr) {  //Функция рандомного выбора
+const getRandomElement = function (arr) {  //Функция рандомного выбора
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
@@ -57,8 +57,8 @@ for (let i = 0; i < amountWizards; i++) {
   })
 };
 
-var renderWizard = function (wizard) {
-  var wizardElement = templateWizards.cloneNode(true);
+const renderWizard = function (wizard) {
+  let wizardElement = templateWizards.cloneNode(true);
 
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
@@ -67,8 +67,8 @@ var renderWizard = function (wizard) {
   return wizardElement;
 }
 
-var fragment = document.createDocumentFragment();
-for (var i = 0; i < wizards.length; i++) {
+let fragment = document.createDocumentFragment();
+for (let i = 0; i < wizards.length; i++) {
   fragment.appendChild(renderWizard(wizards[i]));
 }
 similarListElement.appendChild(fragment);
