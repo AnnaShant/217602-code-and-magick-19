@@ -18,11 +18,13 @@ var renderCloud = function (ctx, x, y, color) {
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getRandom = function () { //Определение насыщенности цвета
+// Определение насыщенности цвета
+var getRandom = function () {
   return Math.random();
 };
 
-var getMaxElement = function (arr) { //Определение максимального времени
+// Определение максимального времени
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
   for (var i = 1; i < arr.length; i++) {
